@@ -4,9 +4,10 @@ var fs = require('fs');
 
 app.use(express.logger());
 
+var str = fs.readFile('index.html', {encoding:'utf-8'});
+
 app.get('/', function(request, response) {
-  response.send(fs.readFile('index.html', {encoding:'utf-8'}));
-  //response.send('Hello World 2!');
+  response.send(str);
 });
 
 var port = process.env.PORT || 5000;
