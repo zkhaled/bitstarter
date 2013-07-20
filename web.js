@@ -5,8 +5,7 @@ var fs = require('fs');
 app.use(express.logger());
 
 app.get('/', function(request, response) {
-  var buf = fs.readFile('index.html');
-  response.send(buf.toString);
+  response.send(fs.readFile('index.html', {encoding: 'utf-8'}));
   //response.send('Hello World 2!');
 });
 
