@@ -4,7 +4,7 @@ var fs = require('fs');
 
 app.use(express.logger());
 
-var str = fs.readFile('index.html', {encoding:'utf-8'});
+var str = fs.readFileSync('index.html', {encoding:'utf-8'});
 console.log('ZK str is '+str);
 
 var files = fs.readdirSync('.');
