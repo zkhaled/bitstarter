@@ -5,6 +5,7 @@ var fs = require('fs');
 app.use(express.logger());
 
 var str = fs.readFile('index.html', {encoding:'utf-8'});
+console.log('ZK str is '+str);
 
 app.get('/', function(request, response) {
   response.send('Blah');
